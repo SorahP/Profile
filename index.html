@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0,
+            maximum-scale=1.0, minimum-scale=1.0"
+            />
+        <title>SorahP Profile</title>
+        <style>
+      body {
+        margin: 0;
+        background-color: black;
+        font-family: "Manrope","Noto Sans JP";
+        font-weight: 700;
+      }
+      /*ローディング画面のスタイル*/
+      #loading {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 10000;
+      }
+      /*ロゴのアニメーション*/
+      .loadingLogo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 260px;
+        height: 69px;
+        padding: 1rem 0.5rem;
+        z-index: 10001;
+      }
+      .loadingLogo:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: rgb(175, 41, 70);
+        animation: logo 1.5s cubic-bezier(0.86, 0, 0.07, 1) 0s infinite normal
+          forwards running;
+      }
+      @keyframes logo {
+        0% {
+          width: 0%;
+          left: 0%;
+        }
+        50% {
+          width: 100%;
+          left: 0%;
+        }
+        100% {
+          width: 0%;
+          left: 100%;
+        }
+      }
+      #curtain {
+        position: fixed;
+        background-color: #287391;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10002;
+        transition: transform 1.2s cubic-bezier(0.86, 0, 0.07, 1);
+      }
+      .hiddenC {
+        transform: translateX(-100vw);
+      }
+      .On {
+        transform: translateX(0);
+      }
+      .hidden {
+        transform: translateX(100vw);
+      }
+      .closed {
+        display: none;
+      }
+      /*英字フォントの読み込み*/
+      /* manrope-regular - latin */
+      @font-face {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 400;
+        src: local(""),
+          url("./fonts/manrope-v13-latin-regular.woff2") format("woff2"),
+          /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("./fonts/manrope-v13-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+
+      /* manrope-700 - latin */
+      @font-face {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 700;
+        src: local(""),
+          url("./fonts/manrope-v13-latin-700.woff2") format("woff2"),
+          /* Chrome 26+, Opera 23+, Firefox 39+ */
+            url("./fonts/manrope-v13-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+      }
+      
+    </style>
+    </head>
+    <body>
+        <div id="loading">
+            <div class="loadingLogo">
+                <img
+                    src="svg/SorahP.svg"
+                    alt="SorahP"
+                    width="260px"
+                    height="69px"
+                    style="filter: invert(100%)"
+                    />
+            </div>
+        </div>
+        <div id="curtain" class="hiddenC"></div>
+        
+        <main>
+            <header>
+                <a class="Twitter" href="https://twitter.com/SorahP_avif">Twitter</a>
+            </header>
+            <div id="TopDisplay">
+                <div id="video-area">
+                    <video id="video" poster="img/background1.png"
+                        loading="lazy" webkit-playsinline playsinline muted
+                        autoplay loop>
+                        <source src="video/background1.mp4" type="video/mp4"
+                            loading="lazy">
+                    </video>
+                </div>
+                <flexbox style="gap:50px;">
+                    <img
+                        src="svg/SorahP.svg"
+                        alt="SorahP"
+                        id="Logo"
+                        style="filter: invert(100%)"
+                        />
+                    <div id="Text">I'm a junior highschool student.<br>Here's
+                        my profile.</div>
+                </flexbox>
+                <div class="scrolldown"><span>Scroll</span></div>
+            </div>
+            <div id="Display">
+                <flexbox>
+                    <div id="Title">Hello <span id="rainbow">World!</span></div>
+                    <div id="Text">Welcome to my site!</div>
+                    <div id="Text">I'll introduce about me.</div>
+                </flexbox>
+            </div>
+            <div id="Skills">
+                <div id="SubTitle">My Skills</div>
+                <br>
+                <br>
+                <flexboxes>
+                    <div class="Skills-item">
+                        <div class="Skills-Title">HTML CSS JS</div>
+                        <div class="Skills-img">
+                            <img src="img/SS1.png">
+                        </div>
+                        <p class="Skills-name">このサイト</p>
+                        <p class="Skills-info">このサイトは気合で作りました<br>最近始めたばかり</p>
+                    </div>
+                    <div class="Skills-item">
+                        <div class="Skills-Title">C# WPF</div>
+                        <div class="Skills-img">
+                            <img src="img/SS2.png">
+                        </div>
+                        <p class="Skills-name">WPFデスクトップ時計</p>
+                        <p class="Skills-info">teratailを頼りに自分で作ったソフト<br>今でも愛着がある(使ってない)</p>
+                    </div>
+                    <div class="Skills-item">
+                        <div class="Skills-Title">After Effects</div>
+                        <div class="Skills-img">
+                            <img src="img/SS3.png">
+                        </div>
+                        <p class="Skills-name">ちょっとだけアニメーションを付けたやつ</p>
+                        <p class="Skills-info">Adobeの無料体験で始めようとしたら年間契約してた<br>ガチの初心者だから練習しないといけない</p>
+                    </div>
+                    <div class="Skills-item">
+                        <div class="Skills-Title">figma</div>
+                        <div class="Skills-img">
+                            <img src="img/SS4.png">
+                        </div>
+                        <p class="Skills-name">ツイッターで投稿した自己紹介画像</p>
+                        <p class="Skills-info">資料を作ったりデザインを考えたりするときに使ってる<br>個人的に使いやすいソフト</p>
+                    </div>
+                    <div class="Skills-item">
+                        <div class="Skills-Title">PhotoShop</div>
+                        <div class="Skills-img">
+                            <img src="img/SS5.png">
+                        </div>
+                        <p class="Skills-name">HUAWEIのロゴを編集しようとしている様子</p>
+                        <p class="Skills-info">ネタ画像を作る時に使っているソフト<br>やっぱり使いやすい</p>
+                    </div>
+                    
+                </flexboxes>
+            </div>
+        </main>
+    </body>
+    <script>
+    window.addEventListener("load", async function (event) {
+      const _sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+      var delaycss1 = document.createElement("link");
+      delaycss1.rel = "stylesheet";
+      delaycss1.href = "style/common.css";
+      document.head.appendChild(delaycss1);
+      document.getElementById("curtain").classList.remove("hiddenC");
+      document.getElementById("curtain").classList.add("On");
+      await _sleep(1200);
+      document.getElementById("loading").classList.add("closed");
+      document.getElementById("curtain").classList.add("hidden");
+      await _sleep(1200);
+      document.getElementById("curtain").classList.add("closed");
+    });
+  </script>
+</html>
