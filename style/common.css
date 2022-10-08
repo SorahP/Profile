@@ -96,6 +96,7 @@ flexboxes img{
 
 #SubTitle{
     position: relative;
+    width: 50vw;
     font-size:clamp(30px,5vmax,60px);
     letter-spacing: 0.04em;
     left: clamp(30px,2.0vmax,100px);
